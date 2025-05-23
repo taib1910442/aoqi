@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #111;
+  transition: background 0.3s, color 0.3s;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.sidebar {
+  width: 250px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+  padding-right: 1rem;
+}
+.content {
+  flex: 1;
+}
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
