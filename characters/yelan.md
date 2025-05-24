@@ -12,7 +12,7 @@
 
 Yelan bắn ra một mũi tên chứa năng lượng Thuỷ, gây sát thương lan lên nhiều mục tiêu.
 
-![Gif kỹ năng 1](../characters/23f99ac25d3964fcbe75b5a907d11f75480582281.gif)
+![Gif kỹ năng 1](../characters/gif/23f99ac25d3964fcbe75b5a907d11f75480582281.gif)
 
 ---
 
