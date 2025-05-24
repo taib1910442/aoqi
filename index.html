@@ -1,60 +1,26 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Wiki Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aoqi Legends - VN</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div class="container">
-    <header>
-      <h1>📘 Wiki Game</h1>
-    </header>
-    <div class="main">
-      <nav id="toc" class="toc"></nav>
-      <section class="sidebar">
-        <h2>Danh sách nhân vật</h2>
-        <ul id="character-list"></ul>
-      </section>
-      <article id="content" class="content">Chọn một nhân vật để xem thông tin.</article>
-    </div>
-  </div>
+  <header>
+    <button id="toggle-menu">ᯓ★ Danh sách nhân vật</button>
+    <button id="toggle-dark">🌙</button>
+  </header>
+
+  <nav id="character-menu" class="menu">
+    <!-- Danh sách nhân vật sẽ được tạo động -->
+  </nav>
+
+  <main id="content" class="content">
+    <p>Chọn một nhân vật để xem thông tin.</p>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.32.2/tocbot.min.js"></script>
-  <script src="list.js"></script>
-  <script>
-    const listContainer = document.getElementById('character-list');
-    const content = document.getElementById('content');
-
-    function renderList() {
-      window.charactersList.forEach(filename => {
-        const li = document.createElement('li');
-        const btn = document.createElement('button');
-        btn.textContent = filename.replace('.md', '');
-        btn.onclick = () => loadCharacter(filename);
-        li.appendChild(btn);
-        listContainer.appendChild(li);
-      });
-    }
-
-    async function loadCharacter(filename) {
-      const res = await fetch(`characters/${filename}`);
-      const md = await res.text();
-      content.innerHTML = marked.parse(md);
-      tocbot.init({
-        tocSelector: '#toc',
-        contentSelector: '#content',
-        headingSelector: 'h1, h2, h3',
-        collapseDepth: 6,
-      });
-    }
-
-    renderList();
-  </script>
+  <script src="script.js"></script>
 </body>
-
 </html>
